@@ -1,0 +1,11 @@
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\bin\Debug\Disconnected Mimarisi.exe.config
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\bin\Debug\Disconnected Mimarisi.exe
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\bin\Debug\Disconnected Mimarisi.pdb
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected Mimarisi.csproj.AssemblyReference.cache
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected_Mimarisi.Form1.resources
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected_Mimarisi.Properties.Resources.resources
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected Mimarisi.csproj.GenerateResource.cache
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected Mimarisi.csproj.CoreCompileInputs.cache
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected Mimarisi.exe
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected Mimarisi.pdb
+C:\Users\Onur\Desktop\GitHub Project\2) C#\ADO.net\Disconnected Mimarisi\Disconnected Mimarisi\obj\Debug\Disconnected_Mimarisi.Form2.resources
