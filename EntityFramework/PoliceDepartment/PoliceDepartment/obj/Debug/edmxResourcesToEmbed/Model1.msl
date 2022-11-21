@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PoliceDepartmantModelStoreContainer" CdmEntityContainer="PoliceDepartmantEntities">
+    <EntitySetMapping Name="Amirlers">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Amirler">
+        <MappingFragment StoreEntitySet="Amirler">
+          <ScalarProperty Name="amirID" ColumnName="amirID" />
+          <ScalarProperty Name="amirTC" ColumnName="amirTC" />
+          <ScalarProperty Name="amirAdi" ColumnName="amirAdi" />
+          <ScalarProperty Name="amirSoyadi" ColumnName="amirSoyadi" />
+          <ScalarProperty Name="amirDepartmani" ColumnName="amirDepartmani" />
+          <ScalarProperty Name="amirMakamAraci" ColumnName="amirMakamAraci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bölgeler">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Bölgeler">
+        <MappingFragment StoreEntitySet="Bölgeler">
+          <ScalarProperty Name="bölgeID" ColumnName="bölgeID" />
+          <ScalarProperty Name="bölgeAdi" ColumnName="bölgeAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departmanlars">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Departmanlar">
+        <MappingFragment StoreEntitySet="Departmanlar">
+          <ScalarProperty Name="departmanID" ColumnName="departmanID" />
+          <ScalarProperty Name="departmanAdi" ColumnName="departmanAdi" />
+          <ScalarProperty Name="departmanBölge" ColumnName="departmanBölge" />
+          <ScalarProperty Name="departmanAmiri" ColumnName="departmanAmiri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ekip_Araclaris">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Ekip_Araclari">
+        <MappingFragment StoreEntitySet="Ekip Araclari">
+          <ScalarProperty Name="aracID" ColumnName="aracID" />
+          <ScalarProperty Name="aracPlaka" ColumnName="aracPlaka" />
+          <ScalarProperty Name="aracPersonel" ColumnName="aracPersonel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kayıtlar">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Kayıtlar">
+        <MappingFragment StoreEntitySet="Kayıtlar">
+          <ScalarProperty Name="kayıtDosyaID" ColumnName="kayıtDosyaID" />
+          <ScalarProperty Name="kayıtDosyaAdi" ColumnName="kayıtDosyaAdi" />
+          <ScalarProperty Name="kayıtDostaTürü" ColumnName="kayıtDostaTürü" />
+          <ScalarProperty Name="kayıtPersonelID" ColumnName="kayıtPersonelID" />
+          <ScalarProperty Name="kayıtDepartmanID" ColumnName="kayıtDepartmanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maaslars">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Maaslar">
+        <MappingFragment StoreEntitySet="Maaslar">
+          <ScalarProperty Name="personelMaasID" ColumnName="personelMaasID" />
+          <ScalarProperty Name="personelMaasTutar" ColumnName="personelMaasTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makam_Araclaris">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Makam_Araclari">
+        <MappingFragment StoreEntitySet="Makam Araclari">
+          <ScalarProperty Name="makamAraciID" ColumnName="makamAraciID" />
+          <ScalarProperty Name="makamAraciPlaka" ColumnName="makamAraciPlaka" />
+          <ScalarProperty Name="makamArabaKoruma" ColumnName="makamArabaKoruma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makam_Korumalaris">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Makam_Korumalari">
+        <MappingFragment StoreEntitySet="Makam Korumalari">
+          <ScalarProperty Name="korumaID" ColumnName="korumaID" />
+          <ScalarProperty Name="korumaTC" ColumnName="korumaTC" />
+          <ScalarProperty Name="korumaAdi" ColumnName="korumaAdi" />
+          <ScalarProperty Name="korumaSoyadi" ColumnName="korumaSoyadi" />
+          <ScalarProperty Name="korumaSehir" ColumnName="korumaSehir" />
+          <ScalarProperty Name="korumaSilah" ColumnName="korumaSilah" />
+          <ScalarProperty Name="korumaMaas" ColumnName="korumaMaas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personellers">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Personeller">
+        <MappingFragment StoreEntitySet="Personeller">
+          <ScalarProperty Name="personelID" ColumnName="personelID" />
+          <ScalarProperty Name="personelTC" ColumnName="personelTC" />
+          <ScalarProperty Name="personelAdi" ColumnName="personelAdi" />
+          <ScalarProperty Name="personelSoyadi" ColumnName="personelSoyadi" />
+          <ScalarProperty Name="personelCinsiyeti" ColumnName="personelCinsiyeti" />
+          <ScalarProperty Name="personelSehri" ColumnName="personelSehri" />
+          <ScalarProperty Name="personelYas" ColumnName="personelYas" />
+          <ScalarProperty Name="personelDepartmani" ColumnName="personelDepartmani" />
+          <ScalarProperty Name="personelBölge" ColumnName="personelBölge" />
+          <ScalarProperty Name="personelArac" ColumnName="personelArac" />
+          <ScalarProperty Name="personelSilah" ColumnName="personelSilah" />
+          <ScalarProperty Name="personelMaas" ColumnName="personelMaas" />
+          <ScalarProperty Name="personelPrim" ColumnName="personelPrim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Primlers">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Primler">
+        <MappingFragment StoreEntitySet="Primler">
+          <ScalarProperty Name="personelPrimID" ColumnName="personelPrimID" />
+          <ScalarProperty Name="personelPrimTutari" ColumnName="personelPrimTutari" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Silahlars">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.Silahlar">
+        <MappingFragment StoreEntitySet="Silahlar">
+          <ScalarProperty Name="silahID" ColumnName="silahID" />
+          <ScalarProperty Name="silahSeriNo" ColumnName="silahSeriNo" />
+          <ScalarProperty Name="silahModeli" ColumnName="silahModeli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PoliceDepartmantModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

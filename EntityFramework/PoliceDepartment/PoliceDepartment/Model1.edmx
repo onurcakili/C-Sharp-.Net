@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PoliceDepartmantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Amirler">
+          <Key>
+            <PropertyRef Name="amirID" />
+          </Key>
+          <Property Name="amirID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="amirTC" Type="varchar" MaxLength="11" />
+          <Property Name="amirAdi" Type="varchar" MaxLength="30" />
+          <Property Name="amirSoyadi" Type="varchar" MaxLength="30" />
+          <Property Name="amirDepartmani" Type="int" />
+          <Property Name="amirMakamAraci" Type="int" />
+        </EntityType>
+        <EntityType Name="Bölgeler">
+          <Key>
+            <PropertyRef Name="bölgeID" />
+          </Key>
+          <Property Name="bölgeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bölgeAdi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Departmanlar">
+          <Key>
+            <PropertyRef Name="departmanID" />
+          </Key>
+          <Property Name="departmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmanAdi" Type="varchar" MaxLength="50" />
+          <Property Name="departmanBölge" Type="int" />
+          <Property Name="departmanAmiri" Type="int" />
+        </EntityType>
+        <EntityType Name="Ekip Araclari">
+          <Key>
+            <PropertyRef Name="aracID" />
+          </Key>
+          <Property Name="aracID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aracPlaka" Type="varchar" MaxLength="50" />
+          <Property Name="aracPersonel" Type="int" />
+        </EntityType>
+        <EntityType Name="Kayıtlar">
+          <Key>
+            <PropertyRef Name="kayıtDosyaID" />
+          </Key>
+          <Property Name="kayıtDosyaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kayıtDosyaAdi" Type="varchar" MaxLength="50" />
+          <Property Name="kayıtDostaTürü" Type="varchar" MaxLength="50" />
+          <Property Name="kayıtPersonelID" Type="int" />
+          <Property Name="kayıtDepartmanID" Type="int" />
+        </EntityType>
+        <EntityType Name="Maaslar">
+          <Key>
+            <PropertyRef Name="personelMaasID" />
+          </Key>
+          <Property Name="personelMaasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personelMaasTutar" Type="int" />
+        </EntityType>
+        <EntityType Name="Makam Araclari">
+          <Key>
+            <PropertyRef Name="makamAraciID" />
+          </Key>
+          <Property Name="makamAraciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="makamAraciPlaka" Type="varchar" MaxLength="50" />
+          <Property Name="makamArabaKoruma" Type="int" />
+        </EntityType>
+        <EntityType Name="Makam Korumalari">
+          <Key>
+            <PropertyRef Name="korumaID" />
+          </Key>
+          <Property Name="korumaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="korumaTC" Type="varchar" MaxLength="50" />
+          <Property Name="korumaAdi" Type="varchar" MaxLength="50" />
+          <Property Name="korumaSoyadi" Type="varchar" MaxLength="50" />
+          <Property Name="korumaSehir" Type="varchar" MaxLength="50" />
+          <Property Name="korumaSilah" Type="int" />
+          <Property Name="korumaMaas" Type="int" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="personelID" />
+          </Key>
+          <Property Name="personelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personelTC" Type="varchar" MaxLength="11" />
+          <Property Name="personelAdi" Type="varchar" MaxLength="50" />
+          <Property Name="personelSoyadi" Type="varchar" MaxLength="50" />
+          <Property Name="personelCinsiyeti" Type="varchar" MaxLength="50" />
+          <Property Name="personelSehri" Type="varchar" MaxLength="50" />
+          <Property Name="personelYas" Type="date" />
+          <Property Name="personelDepartmani" Type="int" />
+          <Property Name="personelBölge" Type="int" />
+          <Property Name="personelArac" Type="int" />
+          <Property Name="personelSilah" Type="int" />
+          <Property Name="personelMaas" Type="int" />
+          <Property Name="personelPrim" Type="int" />
+        </EntityType>
+        <EntityType Name="Primler">
+          <Key>
+            <PropertyRef Name="personelPrimID" />
+          </Key>
+          <Property Name="personelPrimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personelPrimTutari" Type="int" />
+        </EntityType>
+        <EntityType Name="Silahlar">
+          <Key>
+            <PropertyRef Name="silahID" />
+          </Key>
+          <Property Name="silahID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="silahSeriNo" Type="varchar" MaxLength="50" />
+          <Property Name="silahModeli" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Amirler_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Amirler">
+              <PropertyRef Name="amirDepartmani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Amirler_Makam Araclari">
+          <End Role="Makam Araclari" Type="Self.Makam Araclari" Multiplicity="0..1" />
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Makam Araclari">
+              <PropertyRef Name="makamAraciID" />
+            </Principal>
+            <Dependent Role="Amirler">
+              <PropertyRef Name="amirMakamAraci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Amirler">
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Amirler">
+              <PropertyRef Name="amirID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="departmanAmiri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Bölgeler">
+          <End Role="Bölgeler" Type="Self.Bölgeler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bölgeler">
+              <PropertyRef Name="bölgeID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="departmanBölge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kayıtDepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="personelID" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kayıtPersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam Araclari_Makam Korumalari">
+          <End Role="Makam Korumalari" Type="Self.Makam Korumalari" Multiplicity="0..1" />
+          <End Role="Makam Araclari" Type="Self.Makam Araclari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Makam Korumalari">
+              <PropertyRef Name="korumaID" />
+            </Principal>
+            <Dependent Role="Makam Araclari">
+              <PropertyRef Name="makamArabaKoruma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam Korumalari_Maaslar">
+          <End Role="Maaslar" Type="Self.Maaslar" Multiplicity="0..1" />
+          <End Role="Makam Korumalari" Type="Self.Makam Korumalari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maaslar">
+              <PropertyRef Name="personelMaasID" />
+            </Principal>
+            <Dependent Role="Makam Korumalari">
+              <PropertyRef Name="korumaMaas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam Korumalari_Silahlar">
+          <End Role="Silahlar" Type="Self.Silahlar" Multiplicity="0..1" />
+          <End Role="Makam Korumalari" Type="Self.Makam Korumalari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Silahlar">
+              <PropertyRef Name="silahID" />
+            </Principal>
+            <Dependent Role="Makam Korumalari">
+              <PropertyRef Name="korumaSilah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Bölgeler1">
+          <End Role="Bölgeler" Type="Self.Bölgeler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bölgeler">
+              <PropertyRef Name="bölgeID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelBölge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Departmanlar1">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelDepartmani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Ekip Araclari1">
+          <End Role="Ekip Araclari" Type="Self.Ekip Araclari" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ekip Araclari">
+              <PropertyRef Name="aracID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelArac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Maaslar">
+          <End Role="Maaslar" Type="Self.Maaslar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maaslar">
+              <PropertyRef Name="personelMaasID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelMaas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Primler">
+          <End Role="Primler" Type="Self.Primler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Primler">
+              <PropertyRef Name="personelPrimID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelPrim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Silahlar1">
+          <End Role="Silahlar" Type="Self.Silahlar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Silahlar">
+              <PropertyRef Name="silahID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelSilah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PoliceDepartmantModelStoreContainer">
+          <EntitySet Name="Amirler" EntityType="Self.Amirler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bölgeler" EntityType="Self.Bölgeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departmanlar" EntityType="Self.Departmanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ekip Araclari" EntityType="Self.Ekip Araclari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kayıtlar" EntityType="Self.Kayıtlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maaslar" EntityType="Self.Maaslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Makam Araclari" EntityType="Self.Makam Araclari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Makam Korumalari" EntityType="Self.Makam Korumalari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Primler" EntityType="Self.Primler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Silahlar" EntityType="Self.Silahlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Amirler_Departmanlar" Association="Self.FK_Amirler_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+            <End Role="Amirler" EntitySet="Amirler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Amirler_Makam Araclari" Association="Self.FK_Amirler_Makam Araclari">
+            <End Role="Makam Araclari" EntitySet="Makam Araclari" />
+            <End Role="Amirler" EntitySet="Amirler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Amirler" Association="Self.FK_Departmanlar_Amirler">
+            <End Role="Amirler" EntitySet="Amirler" />
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Bölgeler" Association="Self.FK_Departmanlar_Bölgeler">
+            <End Role="Bölgeler" EntitySet="Bölgeler" />
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Departmanlar" Association="Self.FK_Kayıtlar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Personeller" Association="Self.FK_Kayıtlar_Personeller">
+            <End Role="Personeller" EntitySet="Personeller" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam Araclari_Makam Korumalari" Association="Self.FK_Makam Araclari_Makam Korumalari">
+            <End Role="Makam Korumalari" EntitySet="Makam Korumalari" />
+            <End Role="Makam Araclari" EntitySet="Makam Araclari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam Korumalari_Maaslar" Association="Self.FK_Makam Korumalari_Maaslar">
+            <End Role="Maaslar" EntitySet="Maaslar" />
+            <End Role="Makam Korumalari" EntitySet="Makam Korumalari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam Korumalari_Silahlar" Association="Self.FK_Makam Korumalari_Silahlar">
+            <End Role="Silahlar" EntitySet="Silahlar" />
+            <End Role="Makam Korumalari" EntitySet="Makam Korumalari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Bölgeler1" Association="Self.FK_Personeller_Bölgeler1">
+            <End Role="Bölgeler" EntitySet="Bölgeler" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Departmanlar1" Association="Self.FK_Personeller_Departmanlar1">
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Ekip Araclari1" Association="Self.FK_Personeller_Ekip Araclari1">
+            <End Role="Ekip Araclari" EntitySet="Ekip Araclari" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Maaslar" Association="Self.FK_Personeller_Maaslar">
+            <End Role="Maaslar" EntitySet="Maaslar" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Primler" Association="Self.FK_Personeller_Primler">
+            <End Role="Primler" EntitySet="Primler" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Silahlar1" Association="Self.FK_Personeller_Silahlar1">
+            <End Role="Silahlar" EntitySet="Silahlar" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PoliceDepartmantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Amirler">
+          <Key>
+            <PropertyRef Name="amirID" />
+          </Key>
+          <Property Name="amirID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="amirTC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="amirAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="amirSoyadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="amirDepartmani" Type="Int32" />
+          <Property Name="amirMakamAraci" Type="Int32" />
+          <NavigationProperty Name="Departmanlar" Relationship="Self.FK_Amirler_Departmanlar" FromRole="Amirler" ToRole="Departmanlar" />
+          <NavigationProperty Name="Makam_Araclari" Relationship="Self.FK_Amirler_Makam_Araclari" FromRole="Amirler" ToRole="Makam_Araclari" />
+          <NavigationProperty Name="Departmanlars" Relationship="Self.FK_Departmanlar_Amirler" FromRole="Amirler" ToRole="Departmanlar" />
+        </EntityType>
+        <EntityType Name="Bölgeler">
+          <Key>
+            <PropertyRef Name="bölgeID" />
+          </Key>
+          <Property Name="bölgeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bölgeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Departmanlars" Relationship="Self.FK_Departmanlar_Bölgeler" FromRole="Bölgeler" ToRole="Departmanlar" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Bölgeler1" FromRole="Bölgeler" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Departmanlar">
+          <Key>
+            <PropertyRef Name="departmanID" />
+          </Key>
+          <Property Name="departmanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="departmanBölge" Type="Int32" />
+          <Property Name="departmanAmiri" Type="Int32" />
+          <NavigationProperty Name="Amirlers" Relationship="Self.FK_Amirler_Departmanlar" FromRole="Departmanlar" ToRole="Amirler" />
+          <NavigationProperty Name="Amirler" Relationship="Self.FK_Departmanlar_Amirler" FromRole="Departmanlar" ToRole="Amirler" />
+          <NavigationProperty Name="Bölgeler" Relationship="Self.FK_Departmanlar_Bölgeler" FromRole="Departmanlar" ToRole="Bölgeler" />
+          <NavigationProperty Name="Kayıtlar" Relationship="Self.FK_Kayıtlar_Departmanlar" FromRole="Departmanlar" ToRole="Kayıtlar" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Departmanlar1" FromRole="Departmanlar" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Ekip_Araclari">
+          <Key>
+            <PropertyRef Name="aracID" />
+          </Key>
+          <Property Name="aracID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aracPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aracPersonel" Type="Int32" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Ekip_Araclari1" FromRole="Ekip_Araclari" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Kayıtlar">
+          <Key>
+            <PropertyRef Name="kayıtDosyaID" />
+          </Key>
+          <Property Name="kayıtDosyaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kayıtDosyaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kayıtDostaTürü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kayıtPersonelID" Type="Int32" />
+          <Property Name="kayıtDepartmanID" Type="Int32" />
+          <NavigationProperty Name="Departmanlar" Relationship="Self.FK_Kayıtlar_Departmanlar" FromRole="Kayıtlar" ToRole="Departmanlar" />
+          <NavigationProperty Name="Personeller" Relationship="Self.FK_Kayıtlar_Personeller" FromRole="Kayıtlar" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Maaslar">
+          <Key>
+            <PropertyRef Name="personelMaasID" />
+          </Key>
+          <Property Name="personelMaasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personelMaasTutar" Type="Int32" />
+          <NavigationProperty Name="Makam_Korumalari" Relationship="Self.FK_Makam_Korumalari_Maaslar" FromRole="Maaslar" ToRole="Makam_Korumalari" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Maaslar" FromRole="Maaslar" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Makam_Araclari">
+          <Key>
+            <PropertyRef Name="makamAraciID" />
+          </Key>
+          <Property Name="makamAraciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="makamAraciPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="makamArabaKoruma" Type="Int32" />
+          <NavigationProperty Name="Amirlers" Relationship="Self.FK_Amirler_Makam_Araclari" FromRole="Makam_Araclari" ToRole="Amirler" />
+          <NavigationProperty Name="Makam_Korumalari" Relationship="Self.FK_Makam_Araclari_Makam_Korumalari" FromRole="Makam_Araclari" ToRole="Makam_Korumalari" />
+        </EntityType>
+        <EntityType Name="Makam_Korumalari">
+          <Key>
+            <PropertyRef Name="korumaID" />
+          </Key>
+          <Property Name="korumaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="korumaTC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korumaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korumaSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korumaSehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korumaSilah" Type="Int32" />
+          <Property Name="korumaMaas" Type="Int32" />
+          <NavigationProperty Name="Maaslar" Relationship="Self.FK_Makam_Korumalari_Maaslar" FromRole="Makam_Korumalari" ToRole="Maaslar" />
+          <NavigationProperty Name="Makam_Araclari" Relationship="Self.FK_Makam_Araclari_Makam_Korumalari" FromRole="Makam_Korumalari" ToRole="Makam_Araclari" />
+          <NavigationProperty Name="Silahlar" Relationship="Self.FK_Makam_Korumalari_Silahlar" FromRole="Makam_Korumalari" ToRole="Silahlar" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="personelID" />
+          </Key>
+          <Property Name="personelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personelTC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="personelAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="personelSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="personelCinsiyeti" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="personelSehri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="personelYas" Type="DateTime" Precision="0" />
+          <Property Name="personelDepartmani" Type="Int32" />
+          <Property Name="personelBölge" Type="Int32" />
+          <Property Name="personelArac" Type="Int32" />
+          <Property Name="personelSilah" Type="Int32" />
+          <Property Name="personelMaas" Type="Int32" />
+          <Property Name="personelPrim" Type="Int32" />
+          <NavigationProperty Name="Bölgeler" Relationship="Self.FK_Personeller_Bölgeler1" FromRole="Personeller" ToRole="Bölgeler" />
+          <NavigationProperty Name="Departmanlar" Relationship="Self.FK_Personeller_Departmanlar1" FromRole="Personeller" ToRole="Departmanlar" />
+          <NavigationProperty Name="Ekip_Araclari" Relationship="Self.FK_Personeller_Ekip_Araclari1" FromRole="Personeller" ToRole="Ekip_Araclari" />
+          <NavigationProperty Name="Kayıtlar" Relationship="Self.FK_Kayıtlar_Personeller" FromRole="Personeller" ToRole="Kayıtlar" />
+          <NavigationProperty Name="Maaslar" Relationship="Self.FK_Personeller_Maaslar" FromRole="Personeller" ToRole="Maaslar" />
+          <NavigationProperty Name="Primler" Relationship="Self.FK_Personeller_Primler" FromRole="Personeller" ToRole="Primler" />
+          <NavigationProperty Name="Silahlar" Relationship="Self.FK_Personeller_Silahlar1" FromRole="Personeller" ToRole="Silahlar" />
+        </EntityType>
+        <EntityType Name="Primler">
+          <Key>
+            <PropertyRef Name="personelPrimID" />
+          </Key>
+          <Property Name="personelPrimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personelPrimTutari" Type="Int32" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Primler" FromRole="Primler" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Silahlar">
+          <Key>
+            <PropertyRef Name="silahID" />
+          </Key>
+          <Property Name="silahID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="silahSeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="silahModeli" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Makam_Korumalari" Relationship="Self.FK_Makam_Korumalari_Silahlar" FromRole="Silahlar" ToRole="Makam_Korumalari" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Silahlar1" FromRole="Silahlar" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Amirler_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Amirler">
+              <PropertyRef Name="amirDepartmani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Amirler_Makam_Araclari">
+          <End Role="Makam_Araclari" Type="Self.Makam_Araclari" Multiplicity="0..1" />
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Makam_Araclari">
+              <PropertyRef Name="makamAraciID" />
+            </Principal>
+            <Dependent Role="Amirler">
+              <PropertyRef Name="amirMakamAraci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Amirler">
+          <End Role="Amirler" Type="Self.Amirler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Amirler">
+              <PropertyRef Name="amirID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="departmanAmiri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Bölgeler">
+          <End Role="Bölgeler" Type="Self.Bölgeler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bölgeler">
+              <PropertyRef Name="bölgeID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="departmanBölge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Bölgeler1">
+          <End Role="Bölgeler" Type="Self.Bölgeler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bölgeler">
+              <PropertyRef Name="bölgeID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelBölge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kayıtDepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Departmanlar1">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="departmanID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelDepartmani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Ekip_Araclari1">
+          <End Role="Ekip_Araclari" Type="Self.Ekip_Araclari" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ekip_Araclari">
+              <PropertyRef Name="aracID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelArac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayıtlar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Kayıtlar" Type="Self.Kayıtlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="personelID" />
+            </Principal>
+            <Dependent Role="Kayıtlar">
+              <PropertyRef Name="kayıtPersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam_Korumalari_Maaslar">
+          <End Role="Maaslar" Type="Self.Maaslar" Multiplicity="0..1" />
+          <End Role="Makam_Korumalari" Type="Self.Makam_Korumalari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maaslar">
+              <PropertyRef Name="personelMaasID" />
+            </Principal>
+            <Dependent Role="Makam_Korumalari">
+              <PropertyRef Name="korumaMaas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Maaslar">
+          <End Role="Maaslar" Type="Self.Maaslar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maaslar">
+              <PropertyRef Name="personelMaasID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelMaas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam_Araclari_Makam_Korumalari">
+          <End Role="Makam_Korumalari" Type="Self.Makam_Korumalari" Multiplicity="0..1" />
+          <End Role="Makam_Araclari" Type="Self.Makam_Araclari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Makam_Korumalari">
+              <PropertyRef Name="korumaID" />
+            </Principal>
+            <Dependent Role="Makam_Araclari">
+              <PropertyRef Name="makamArabaKoruma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Makam_Korumalari_Silahlar">
+          <End Role="Silahlar" Type="Self.Silahlar" Multiplicity="0..1" />
+          <End Role="Makam_Korumalari" Type="Self.Makam_Korumalari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Silahlar">
+              <PropertyRef Name="silahID" />
+            </Principal>
+            <Dependent Role="Makam_Korumalari">
+              <PropertyRef Name="korumaSilah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Primler">
+          <End Role="Primler" Type="Self.Primler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Primler">
+              <PropertyRef Name="personelPrimID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelPrim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Silahlar1">
+          <End Role="Silahlar" Type="Self.Silahlar" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Silahlar">
+              <PropertyRef Name="silahID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="personelSilah" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PoliceDepartmantEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Amirlers" EntityType="Self.Amirler" />
+          <EntitySet Name="Bölgeler" EntityType="Self.Bölgeler" />
+          <EntitySet Name="Departmanlars" EntityType="Self.Departmanlar" />
+          <EntitySet Name="Ekip_Araclaris" EntityType="Self.Ekip_Araclari" />
+          <EntitySet Name="Kayıtlar" EntityType="Self.Kayıtlar" />
+          <EntitySet Name="Maaslars" EntityType="Self.Maaslar" />
+          <EntitySet Name="Makam_Araclaris" EntityType="Self.Makam_Araclari" />
+          <EntitySet Name="Makam_Korumalaris" EntityType="Self.Makam_Korumalari" />
+          <EntitySet Name="Personellers" EntityType="Self.Personeller" />
+          <EntitySet Name="Primlers" EntityType="Self.Primler" />
+          <EntitySet Name="Silahlars" EntityType="Self.Silahlar" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Amirler_Departmanlar" Association="Self.FK_Amirler_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+            <End Role="Amirler" EntitySet="Amirlers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Amirler_Makam_Araclari" Association="Self.FK_Amirler_Makam_Araclari">
+            <End Role="Makam_Araclari" EntitySet="Makam_Araclaris" />
+            <End Role="Amirler" EntitySet="Amirlers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Amirler" Association="Self.FK_Departmanlar_Amirler">
+            <End Role="Amirler" EntitySet="Amirlers" />
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Bölgeler" Association="Self.FK_Departmanlar_Bölgeler">
+            <End Role="Bölgeler" EntitySet="Bölgeler" />
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Bölgeler1" Association="Self.FK_Personeller_Bölgeler1">
+            <End Role="Bölgeler" EntitySet="Bölgeler" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Departmanlar" Association="Self.FK_Kayıtlar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Departmanlar1" Association="Self.FK_Personeller_Departmanlar1">
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Ekip_Araclari1" Association="Self.FK_Personeller_Ekip_Araclari1">
+            <End Role="Ekip_Araclari" EntitySet="Ekip_Araclaris" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayıtlar_Personeller" Association="Self.FK_Kayıtlar_Personeller">
+            <End Role="Personeller" EntitySet="Personellers" />
+            <End Role="Kayıtlar" EntitySet="Kayıtlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam_Korumalari_Maaslar" Association="Self.FK_Makam_Korumalari_Maaslar">
+            <End Role="Maaslar" EntitySet="Maaslars" />
+            <End Role="Makam_Korumalari" EntitySet="Makam_Korumalaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Maaslar" Association="Self.FK_Personeller_Maaslar">
+            <End Role="Maaslar" EntitySet="Maaslars" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam_Araclari_Makam_Korumalari" Association="Self.FK_Makam_Araclari_Makam_Korumalari">
+            <End Role="Makam_Korumalari" EntitySet="Makam_Korumalaris" />
+            <End Role="Makam_Araclari" EntitySet="Makam_Araclaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Makam_Korumalari_Silahlar" Association="Self.FK_Makam_Korumalari_Silahlar">
+            <End Role="Silahlar" EntitySet="Silahlars" />
+            <End Role="Makam_Korumalari" EntitySet="Makam_Korumalaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Primler" Association="Self.FK_Personeller_Primler">
+            <End Role="Primler" EntitySet="Primlers" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Silahlar1" Association="Self.FK_Personeller_Silahlar1">
+            <End Role="Silahlar" EntitySet="Silahlars" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PoliceDepartmantModelStoreContainer" CdmEntityContainer="PoliceDepartmantEntities">
+          <EntitySetMapping Name="Amirlers">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Amirler">
+              <MappingFragment StoreEntitySet="Amirler">
+                <ScalarProperty Name="amirID" ColumnName="amirID" />
+                <ScalarProperty Name="amirTC" ColumnName="amirTC" />
+                <ScalarProperty Name="amirAdi" ColumnName="amirAdi" />
+                <ScalarProperty Name="amirSoyadi" ColumnName="amirSoyadi" />
+                <ScalarProperty Name="amirDepartmani" ColumnName="amirDepartmani" />
+                <ScalarProperty Name="amirMakamAraci" ColumnName="amirMakamAraci" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bölgeler">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Bölgeler">
+              <MappingFragment StoreEntitySet="Bölgeler">
+                <ScalarProperty Name="bölgeID" ColumnName="bölgeID" />
+                <ScalarProperty Name="bölgeAdi" ColumnName="bölgeAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departmanlars">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Departmanlar">
+              <MappingFragment StoreEntitySet="Departmanlar">
+                <ScalarProperty Name="departmanID" ColumnName="departmanID" />
+                <ScalarProperty Name="departmanAdi" ColumnName="departmanAdi" />
+                <ScalarProperty Name="departmanBölge" ColumnName="departmanBölge" />
+                <ScalarProperty Name="departmanAmiri" ColumnName="departmanAmiri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ekip_Araclaris">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Ekip_Araclari">
+              <MappingFragment StoreEntitySet="Ekip Araclari">
+                <ScalarProperty Name="aracID" ColumnName="aracID" />
+                <ScalarProperty Name="aracPlaka" ColumnName="aracPlaka" />
+                <ScalarProperty Name="aracPersonel" ColumnName="aracPersonel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kayıtlar">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Kayıtlar">
+              <MappingFragment StoreEntitySet="Kayıtlar">
+                <ScalarProperty Name="kayıtDosyaID" ColumnName="kayıtDosyaID" />
+                <ScalarProperty Name="kayıtDosyaAdi" ColumnName="kayıtDosyaAdi" />
+                <ScalarProperty Name="kayıtDostaTürü" ColumnName="kayıtDostaTürü" />
+                <ScalarProperty Name="kayıtPersonelID" ColumnName="kayıtPersonelID" />
+                <ScalarProperty Name="kayıtDepartmanID" ColumnName="kayıtDepartmanID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maaslars">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Maaslar">
+              <MappingFragment StoreEntitySet="Maaslar">
+                <ScalarProperty Name="personelMaasID" ColumnName="personelMaasID" />
+                <ScalarProperty Name="personelMaasTutar" ColumnName="personelMaasTutar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Makam_Araclaris">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Makam_Araclari">
+              <MappingFragment StoreEntitySet="Makam Araclari">
+                <ScalarProperty Name="makamAraciID" ColumnName="makamAraciID" />
+                <ScalarProperty Name="makamAraciPlaka" ColumnName="makamAraciPlaka" />
+                <ScalarProperty Name="makamArabaKoruma" ColumnName="makamArabaKoruma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Makam_Korumalaris">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Makam_Korumalari">
+              <MappingFragment StoreEntitySet="Makam Korumalari">
+                <ScalarProperty Name="korumaID" ColumnName="korumaID" />
+                <ScalarProperty Name="korumaTC" ColumnName="korumaTC" />
+                <ScalarProperty Name="korumaAdi" ColumnName="korumaAdi" />
+                <ScalarProperty Name="korumaSoyadi" ColumnName="korumaSoyadi" />
+                <ScalarProperty Name="korumaSehir" ColumnName="korumaSehir" />
+                <ScalarProperty Name="korumaSilah" ColumnName="korumaSilah" />
+                <ScalarProperty Name="korumaMaas" ColumnName="korumaMaas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personellers">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Personeller">
+              <MappingFragment StoreEntitySet="Personeller">
+                <ScalarProperty Name="personelID" ColumnName="personelID" />
+                <ScalarProperty Name="personelTC" ColumnName="personelTC" />
+                <ScalarProperty Name="personelAdi" ColumnName="personelAdi" />
+                <ScalarProperty Name="personelSoyadi" ColumnName="personelSoyadi" />
+                <ScalarProperty Name="personelCinsiyeti" ColumnName="personelCinsiyeti" />
+                <ScalarProperty Name="personelSehri" ColumnName="personelSehri" />
+                <ScalarProperty Name="personelYas" ColumnName="personelYas" />
+                <ScalarProperty Name="personelDepartmani" ColumnName="personelDepartmani" />
+                <ScalarProperty Name="personelBölge" ColumnName="personelBölge" />
+                <ScalarProperty Name="personelArac" ColumnName="personelArac" />
+                <ScalarProperty Name="personelSilah" ColumnName="personelSilah" />
+                <ScalarProperty Name="personelMaas" ColumnName="personelMaas" />
+                <ScalarProperty Name="personelPrim" ColumnName="personelPrim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Primlers">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Primler">
+              <MappingFragment StoreEntitySet="Primler">
+                <ScalarProperty Name="personelPrimID" ColumnName="personelPrimID" />
+                <ScalarProperty Name="personelPrimTutari" ColumnName="personelPrimTutari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Silahlars">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.Silahlar">
+              <MappingFragment StoreEntitySet="Silahlar">
+                <ScalarProperty Name="silahID" ColumnName="silahID" />
+                <ScalarProperty Name="silahSeriNo" ColumnName="silahSeriNo" />
+                <ScalarProperty Name="silahModeli" ColumnName="silahModeli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PoliceDepartmantModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

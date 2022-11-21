@@ -1,0 +1,30 @@
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.exe.config
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.exe
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.pdb
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.AssemblyReference.cache
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.Form1.resources
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.Properties.Resources.resources
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.GenerateResource.cache
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.CoreCompileInputs.cache
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.exe
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.pdb
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.dll
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.xml
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Onur\Desktop\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.CopyComplete
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.exe.config
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.exe
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\PoliceDepartment.pdb
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.dll
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.xml
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.AssemblyReference.cache
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.Form1.resources
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.Properties.Resources.resources
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.GenerateResource.cache
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.CoreCompileInputs.cache
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.csproj.CopyComplete
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.exe
+C:\Users\Onur\Desktop\GitHub Project\ProgramingHomeWork\1) PoliceDepartment\PoliceDepartment\PoliceDepartment\obj\Debug\PoliceDepartment.pdb
